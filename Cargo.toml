@@ -1,6 +1,6 @@
 [package]
 name = "codee"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 authors = ["Marc-Stefan Cassola"]
 categories = ["encoding"]
@@ -17,7 +17,7 @@ bincode = { version = "1", optional = true }
 js-sys = { version = "0.3", optional = true }
 miniserde = { version = "0.1", optional = true }
 prost = { version = "0.12", optional = true }
-rkyv = { version = "0.7", optional = true, features = ["validation", "strict"] }
+rkyv = { version = "0.8", optional = true }
 rmp-serde = { version = "1.1", optional = true }
 serde = { version = "1", optional = true }
 serde_json = { version = "1", optional = true }
@@ -33,6 +33,7 @@ msgpack_serde = ["dep:rmp-serde", "dep:serde"]
 bincode_serde = ["dep:bincode", "dep:serde"]
 serde_lite = ["dep:serde-lite"]
 json_serde_wasm = ["dep:serde", "dep:serde_json", "dep:js-sys", "dep:serde-wasm-bindgen", "dep:wasm-bindgen"]
+rkyv = ["dep:rkyv"]
 
 
 [dev-dependencies]
