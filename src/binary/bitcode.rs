@@ -14,7 +14,7 @@ impl<T: bitcode::Encode> Encoder<T> for BitcodeCodec {
     }
 }
 
-impl<T: bitcode::Decode> Decoder<T> for BitcodeCodec {
+impl<'a, T: bitcode::Decode<'a>> Decoder<T> for BitcodeCodec {
     type Error = bitcode::Error;
     type Encoded = [u8];
 
