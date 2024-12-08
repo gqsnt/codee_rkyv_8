@@ -18,9 +18,7 @@ impl<T: bitcode::Decode> Decoder<T> for BitcodeCodec {
     type Error = bitcode::Error;
     type Encoded = [u8];
 
-    fn decode(val: &Self::Encoded) -> Result<T, Self::Error> {
-        Ok(bitcode::decode(val))
-    }
+    fn decode(val: &Self::Encoded) -> Result<T, Self::Error> { bitcode::decode(val) }
 }
 
 #[cfg(test)]
