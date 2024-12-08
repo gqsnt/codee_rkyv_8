@@ -14,6 +14,7 @@ repository = "https://github.com/Synphonyte/codee"
 [dependencies]
 base64 = { version = "0.21", optional = true }
 bincode = { version = "1", optional = true }
+bitcode = { version = "0.6", optional = true }
 js-sys = { version = "0.3", optional = true }
 miniserde = { version = "0.1", optional = true }
 prost = { version = "0.12", optional = true }
@@ -34,6 +35,7 @@ bincode_serde = ["dep:bincode", "dep:serde"]
 serde_lite = ["dep:serde-lite"]
 json_serde_wasm = ["dep:serde", "dep:serde_json", "dep:js-sys", "dep:serde-wasm-bindgen", "dep:wasm-bindgen"]
 rkyv = ["dep:rkyv"]
+bitcode = ["dep:bitcode"]
 
 
 [dev-dependencies]

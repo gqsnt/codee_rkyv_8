@@ -8,6 +8,9 @@ mod prost;
 #[cfg(feature = "rkyv")]
 mod rkyv;
 
+#[cfg(feature = "bitcode")]
+pub mod bitcode;
+
 #[cfg(feature = "bincode_serde")]
 pub use bincode_serde::*;
 #[allow(unused_imports)]
