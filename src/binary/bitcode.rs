@@ -26,7 +26,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_bincode_codec() {
+    fn test_bitcode_codec() {
         #[derive(Clone, Debug, PartialEq, bitcode::Encode, bitcode::Decode)]
         struct Test {
             s: String,

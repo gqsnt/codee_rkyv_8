@@ -9,7 +9,7 @@ mod prost;
 mod rkyv;
 
 #[cfg(feature = "bitcode")]
-pub mod bitcode;
+mod bitcode;
 
 #[cfg(feature = "bincode_serde")]
 pub use bincode_serde::*;
@@ -21,3 +21,6 @@ pub use msgpack_serde::*;
 pub use prost::*;
 #[cfg(feature = "rkyv")]
 pub use rkyv::*;
+
+#[cfg(feature = "bitcode")]
+pub use bitcode::*;
