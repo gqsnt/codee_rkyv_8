@@ -3,9 +3,9 @@ use crate::{Decoder, Encoder};
 /// A codec that relies on `bitcode` to encode decode data.
 ///
 /// This is only available with the **`bitcode` feature** enabled.
-pub struct BitCodeCodec;
+pub struct BitcodeCodec;
 
-impl<T: bitcode::Encode> Encoder<T> for BitCodeCodec {
+impl<T: bitcode::Encode> Encoder<T> for BitcodeCodec {
     type Error = bitcode::Error;
     type Encoded = Vec<u8>;
 
@@ -14,7 +14,7 @@ impl<T: bitcode::Encode> Encoder<T> for BitCodeCodec {
     }
 }
 
-impl<T: bitcode::Decode> Decoder<T> for BitCodeCodec {
+impl<T: bitcode::Decode> Decoder<T> for BitcodeCodec {
     type Error = bitcode::Error;
     type Encoded = [u8];
 
@@ -38,8 +38,8 @@ mod tests {
             s: String::from("party time 🎉"),
             i: 42,
         };
-        let enc = BitCodeCodec::encode(&t).unwrap();
-        let dec: Test = BitCodeCodec::decode(&enc).unwrap();
+        let enc = BitcodeCodec::encode(&t).unwrap();
+        let dec: Test = BitcodeCodec::decode(&enc).unwrap();
         assert_eq!(dec, t);
     }
 }
