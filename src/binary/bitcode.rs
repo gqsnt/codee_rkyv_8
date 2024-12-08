@@ -1,4 +1,4 @@
-
+use bitcode::DecodeOwned;
 use crate::{Decoder, Encoder};
 
 /// A codec that relies on `bitcode` to encode decode data.
@@ -15,7 +15,7 @@ impl<T: bitcode::Encode> Encoder<T> for BitcodeCodec {
     }
 }
 
-impl< T: for <'a> bitcode::Decode<'a>> Decoder<T> for BitcodeCodec {
+impl< T: DecodeOwned> Decoder<T> for BitcodeCodec {
     type Error = bitcode::Error;
     type Encoded = [u8];
 
